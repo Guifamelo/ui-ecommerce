@@ -1,0 +1,8 @@
+.container{
+    background-color: rgb(39, 39, 118);
+    color: aliceblue;
+}
+button{
+    width: 10rem;
+    height: 5rem;
+}
