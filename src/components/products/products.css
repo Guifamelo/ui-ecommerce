@@ -16,8 +16,9 @@
     display: flex;
     justify-content: space-around;
 }
-.card-box{
+.cards-box{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     justify-content: space-evenly;
     width: 100%;
@@ -31,4 +32,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 30rem;
+    height: auto;
+    margin: 5px;
+}
+.img_card{
+    max-width: 28rem;
+    max-height: auto;
+    padding: .5rem;
 }

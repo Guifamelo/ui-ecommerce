@@ -1,80 +1,44 @@
 import React from "react"
 import './products.css'
+import { useState, useEffect } from "react"
+import axios from "axios"
+import Header from "../header"
 
 const Products = () => {
+    const [products, setProducts] = useState([])
+
+    useEffect(() => {
+        const url = "http://localhost:3333/products";
+
+        axios.get(url)
+            .then(res => {
+                console.log(res);
+                const data = res.data;
+                console.log(data);
+                setProducts(data)
+
+            })
+            .catch(err => console.log(err))
+    }, []);
 
     return (
         <div>
-            <h1>Produtos...</h1>
-            <section className="populares">
-                <h2>Mais de R$ 50,00</h2>
-                <div className="card-box">
+            <Header/>
+            <h1>Produtos...</h1> 
+            <span>Aproveite as promoções e descontos exclusivos que oferecemos regularmente em nossa loja. Cadastre-se em nossa newsletter para receber as últimas novidades, ofertas e promoções.</span>
+            <div className="cards-box">
+            {products.map((product,key) => {
+                return(
                     <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 01</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
+                        <img className="img_card" src={product.productImage} alt="imagem do produto"></img>
+                        <h3>{product.productName}</h3>
+                        <p>{product.productDescription}</p>
+                        <p>Valor: R$ {product.productPrice}</p>
                     </div>
-                    <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 02</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
-                    </div>
-                    <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 03</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
-                    </div>
-                </div>
-            </section>
-            <section className="populares">
-                <h2>Mais de R$ 200,00</h2>
-                <div className="card-box">
-                    <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 01</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
-                    </div>
-                    <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 02</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
-                    </div>
-                    <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 03</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
-                    </div>
-                </div>
-            </section>
-            <section className="populares">
-                <h2>Mais de R$ 200,00</h2>
-                <div className="card-box">
-                    <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 01</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
-                    </div>
-                    <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 02</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
-                    </div>
-                    <div className="card">
-                        <img className="img_card" href="" alt="imagem do produto"></img>
-                        <h3>produto 03</h3>
-                        <p>Descrição do produto</p>
-                        <p>Valor: R$ xxx,xx</p>
-                    </div>
-                </div>
-            </section>          
+                )
+
+            })}
+            </div>          
 
         </div>
     )
