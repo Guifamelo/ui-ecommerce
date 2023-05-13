@@ -5,7 +5,6 @@ const HomeScreen = () => {
 
     return (
         <div>
-            <span>Home screen. component Home abaixo.</span>
             <Home />
         </div>
     )
