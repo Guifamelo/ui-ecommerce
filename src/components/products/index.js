@@ -23,22 +23,84 @@ const Products = () => {
 
     return (
         <div>
-            <Header/>
-            <h1>Produtos...</h1> 
-            <span>Aproveite as promoções e descontos exclusivos que oferecemos regularmente em nossa loja. Cadastre-se em nossa newsletter para receber as últimas novidades, ofertas e promoções.</span>
-            <div className="cards-box">
-            {products.map((product,key) => {
-                return(
-                    <div className="card">
-                        <img className="img_card" src={product.productImage} alt="imagem do produto"></img>
-                        <h3>{product.productName}</h3>
-                        <p>{product.productDescription}</p>
-                        <p>Valor: R$ {product.productPrice}</p>
-                    </div>
-                )
+            <Header />
 
-            })}
-            </div>          
+            <section className="section">
+                <h2>Produtos em Destaque</h2>
+                <ul>
+                    <li>
+                        <img src="http://lorempixel.com.br/400/200" alt="Produto 1"></img>
+                        <h3>Produto 1</h3>
+                        <p>R$ 99,99</p>
+                    </li>
+                    <li>
+                        <img src="http://lorempixel.com.br/400/200" alt="Produto 2"></img>
+                        <h3>Produto 2</h3>
+                        <p>R$ 149,99</p>
+                    </li>
+                    <li>
+                        <img src="http://lorempixel.com.br/400/200" alt="Produto 3"></img>
+                        <h3>Produto 3</h3>
+                        <p>R$ 199,99</p>
+                    </li>
+                </ul>
+            </section>
+            <section className="section">
+                <h2>Recomendados</h2>
+                <ul>
+                    <li>
+                        <img src="produto1.jpg" alt="Produto 1"></img>
+                        <h3>Produto 1</h3>
+                        <p>R$ 99,99</p>
+                    </li>
+                    <li>
+                        <img src="produto2.jpg" alt="Produto 2"></img>
+                        <h3>Produto 2</h3>
+                        <p>R$ 149,99</p>
+                    </li>
+                    <li>
+                        <img src="produto3.jpg" alt="Produto 3"></img>
+                        <h3>Produto 3</h3>
+                        <p>R$ 199,99</p>
+                    </li>
+                </ul>
+            </section>
+            <section id="tabela" name="tabela">
+                <div class="product-list">
+                    <table className="table">
+                        <thead className="thead">
+                            <tr>
+                                <th className="th">Produto</th>
+                                <th className="th">Descrição</th>
+                                <th className="th">Preço</th>
+                                <th className="th">Disponibilidade</th>
+                                <th className="th">Qtde</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {products.map((product, key) => {
+                                
+                                console.log(product.length)
+
+                                return (
+                                    <tr>
+                                        <td>{product.productName}</td>
+                                        <td>{product.productDescription}</td>
+                                        <td>R$ {product.productPrice},00</td>
+                                        <td>Em estoque</td>
+                                        <td>{product.productQuantity}</td>
+                                    </tr>
+                                )
+                            })}                            
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+
+
+            
 
         </div>
     )

@@ -1,43 +1,99 @@
-.container{
-    background-color: rgb(58, 58, 152);
-    color: aliceblue;
+/* MAIN */
+.body-products {
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2;
+    color: #333;
 }
-.button{
-    width: 8rem;
-    height: 5rem;
-    cursor: pointer;
+
+.header-products {
+    background-color: #2196F3;
+    padding: 20px;
+    color: #FFF;
 }
-.button:hover{
-    background-color: rgb(74, 65, 177);
-    color: azure;
-    transition: linear  .3s;
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
-.button-box{
+
+.nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.nav a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.main {
+    padding: 20px;
+}
+
+.section {
+    background-color: #FFF;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section h2 {
+    color: #2196F3;
+}
+
+.section ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
 }
-.cards-box{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-content: space-evenly;
-    width: 100%;
-    margin-top: 80px;
-    margin-bottom: 80px;
+
+.section li {
+    flex: 1 1 300px;
+    background-color: #FFF;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
 }
-.card{
-    background-color: antiquewhite;
-    color: rgb(1, 1, 1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 30rem;
+
+.section li img {
+    max-width: 100%;
     height: auto;
-    margin: 5px;
 }
-.img_card{
-    max-width: 28rem;
-    max-height: auto;
-    padding: .5rem;
+
+.section li h3 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.section li p {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #2196F3;
+}
+
+
+/***************  TABELA *****************/
+/* LISTA */
+.product-list {
+    font-family: Arial, sans-serif;
+    width: 100%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.th {
+    text-align: left;
+    background-color: #2196f3;
+    color: #fff;
+    padding:2px;
 }

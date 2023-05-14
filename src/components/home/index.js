@@ -2,12 +2,16 @@ import React from "react";
 import './home.css'
 import { Link } from "react-router-dom";
 import Header from "../header";
+import FormLogin from "../formularios/formLogin";
 
 
 const Home = () => {
     return (
         <div>
             <Header></Header>
+            <div className="login-box">
+                <FormLogin />
+            </div>
             <div className="container">
                 <h1>Home component!</h1>
                 <div>
